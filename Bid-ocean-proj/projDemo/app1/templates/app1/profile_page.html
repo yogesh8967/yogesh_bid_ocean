@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/CSS.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/CSS.css' %}"> -->
+    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+    <link rel="shortcut icon" href="#"/ >
+    <style>
+        .field{
+            font-weight: bold;
+        }
+        .entry{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    {% include 'app1/navber.html' %}
+    <div class="panel panel-default">
+        <div class="panel-body menu-header">
+            PROFILE
+        </div>
+    </div>
+    <div class = "container">
+        <a href = "{% url 'contact_Updater' person.User_ID %}">
+            <span class = "fa fa-pencil-square-o fa-2x float-right" ></span>
+        </a>
+        <p><span class = 'field'>Name : </span><span class = 'entry'>{{person.User_ID}}</span></p>
+        <p><span class = 'field'>E-Mail : </span><span class = 'entry'>{{person.E_Mail}}</span></p>
+        <p><span class = 'field'>Ph-no : </span><span class = 'entry'>{{person.Ph_no}}</span></p>
+        <p><span class = 'field'>Address : </span><span class = 'entry'>{{person.Address}}</span></p>
+    </div>
+    <br>
+</body>
+<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</html>

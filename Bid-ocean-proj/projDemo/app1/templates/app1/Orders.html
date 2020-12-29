@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/CSS.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/CSS.css' %}"> -->
+    <title>Order</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    </style>
+    <link rel="shortcut icon" href="#"/ >
+</head>
+<body>
+    {% include 'app1/navbar.html' %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Order.no</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Order Placed</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Items</th>
+            <th scope="col">Total Amount</th>
+            <th scope='col'>Payment Status</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in orders %}
+            <tr>
+            <th scope="row">{{i.order.id}}</th>
+            <td>
+                <div class="dropdown">
+                    <span class="fa fa-user-circle-o" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </span>
+                    <span>
+                        <strong>{{i.order.User_ID.User_ID}}</strong>
+                    </span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href = "#">{{i.order.User_ID.User_ID}}<br> {{i.order.User_ID.Ph_no}} <br> {{i.order.User_ID.E_Mail}}</a>
+                    </div>
+                </div>
+            </td>
+            <td>{{i.order.Date}}</td>
+            <td>{{i.order.Destination}}</td>
+            <td>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ITEMS
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        {% for j in i.items %}
+                        <a class="dropdown-item" href = "#">{{j.Dish_id.Dish_Name}} ( {{j.Dish_id.Price}} ) x {{j.Quantity}} </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+            <td>{{i.order.Total_Amount}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="myFunction2(this.id)" id = "{{i.order.id}}">{{i.order.Payment_Status}}</button>
+            </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/my_js.js' %}"></script>
+</html>

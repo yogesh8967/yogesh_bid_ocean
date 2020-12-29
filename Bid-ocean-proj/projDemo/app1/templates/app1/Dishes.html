@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/CSS.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/CSS.css' %}"> -->
+    <title>Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .add-icon{
+            margin-right: 15px;
+        }
+    </style>
+    <link rel="shortcut icon" href="#"/ >
+</head>
+<body>
+    {% include 'app1/navbar.html' %}
+    <div class="panel panel-default">
+        <div class="panel-body menu-header">
+            DISHES
+            <a href = '{% url "Dish_Adder" %}'><span class="fa fa-plus-circle manager-icon add-icon" aria-hidden="true"></span></a>
+        </div>
+    </div>
+    <div class="row">
+        {% for i in dishes %}
+        <div class="col-sm-6 col-md-4 col-xl-4 menu1" >
+          <div class="thumbnail menu-item" >
+            <div class = 'food-item'><img src="{{ i.Dish_File_Path.url }}" alt="..."></div>
+            <div class="caption dish-capt">
+                
+                <p class = 'float-left'>{{ i.Dish_Name }} &ensp; <!-- <span class="fa fa-info-circle"> --></span></p>
+                <br>
+                <p class = 'float-left'>Price: {{ i.Price }}</p>
+                <a href = '{% url "Deleter" i.Dish_Name %}'><span class="fa fa-trash fa-lg manager-icon" aria-hidden="true"></span></a>
+                <a href = '{% url "Updater" i.Dish_Name %}'><span class="fa fa-pencil-square-o fa-lg  manager-icon" aria-hidden="true"></span></a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+<script src="{% static 'js/jquery-3.5.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</html>

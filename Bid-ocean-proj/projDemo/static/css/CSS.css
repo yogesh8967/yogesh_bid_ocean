@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.dish-type{
+    padding-left: 33%;
+}
+.card-img-top{
+    width: 250px;
+}
+.btn-success{
+    background-color: #0B5394;
+    margin-top: 4px;
+}
+.manager-icon{
+    float: right;
+    margin-left: 6px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.panel-body{
+    text-align: center;
+    align-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.menu-header{
+    font-size: 50px;
+}
+.container{
+    width: 50%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -o-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+
+.dish_adder_submit{
+    margin: 15px;
+    margin-left: 40%;
+}
+
+label{
+    margin-left: 2px;
+    margin-top: 15px;
+}
+
+.category{
+    width: 400px;
+    height: 91px;
+    padding: 0px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -o-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+.product{
+    border: black;
+    border-width: 2px;
+}
+
+div{
+    column-gap: 0px;
+}
+body{
+    background-color: whitesmoke;
+}
+.food-item img{
+    width: 100%;
+    height: 200px;
+}
+.menu1{
+    margin-bottom: 27px;
+}
+.menu-item{
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -webkit-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+    -o-box-shadow: 0 0 12px rgba(0,0,0,0.8);
+}
+
+
+.caption{
+    overflow: auto;
+}
+
+.caption p{
+    margin-bottom: 0px;
+    font-family: 'Work Sans';
+    font-weight: bold;
+}
+
+.dish-capt{
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.glyphicon-info-sign{
+    color: black;
+}
+/**
+@media (min-width: 992px){
+    .product-menu{
+        margin-left: 34%;
+        margin-right: 34%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .product-menu{
+        margin-left: 24%;
+        margin-right: 24%;
+    }
+}
+
+@media (max-width: 767px){
+    .product-menu{
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+} **/
